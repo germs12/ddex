@@ -1,8 +1,10 @@
-require "ddex/proprietary_id"
+require "ddex/accessors/common"
 
 module DDEX
   class ImageId < Element
-    xml_accessor :replaced?, :from => "@IsReplaced"
-    xml_accessor :proprietary_ids, :as => [ProprietaryId]
+    extend DDEX::Accessors::Common
+
+    replaced
+    proprietary_ids
   end
 end

@@ -1,8 +1,10 @@
-require "ddex/proprietary_id"
+require "ddex/accessors/common"
 
 module DDEX
   class RightsAgreementId < Element
-    xml_accessor :mwli, :from => "MWLI", :as => []
-    xml_accessor :proprietary_ids, :as => [ProprietaryId]
+    extend DDEX::Accessors::Common
+
+    xml_accessor :mwli, :from => "MWLI", :as => []    
+    proprietary_ids
   end
 end

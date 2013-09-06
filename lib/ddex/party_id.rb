@@ -1,8 +1,11 @@
+require "ddex/accessors/common"
+
 module DDEX
-  class PartyId < Element
-    xml_accessor :namespace, :from => :attr
+  class PartyId < SimpleElement
+    extend DDEX::Accessors::Common
+
+    namespace
     xml_accessor :dpid?, :from => "@IsDPID"
     xml_accessor :isni?, :from => "@IsISNI"
-    xml_accessor :value, :from => "."
   end
 end

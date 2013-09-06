@@ -1,6 +1,9 @@
+require "ddex/accessors/common"
+
 module DDEX
   class ProprietaryId < SimpleElement
-    xml_accessor :namespace, :from => :attr
+    extend DDEX::Accessors::Common
+    namespace
   end
 end
 
